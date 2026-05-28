@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --embranix-bg: #F5F0E8;
+    --embranix-bg-alt: #FFFFFF;
+    --embranix-text: #1A1410;
+    --embranix-text-secondary: #6B6560;
+    --embranix-red: #C41D1D;
+    --embranix-red-light: #E85A5A;
+    --embranix-gold: #C9A84C;
+    --embranix-border: #E5E0D8;
+    --embranix-border-dark: #D5CFC6;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--embranix-text);
+    background-color: var(--embranix-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+}
+
+@layer components {
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--embranix-red);
+  }
+  .btn-primary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    background-color: var(--embranix-text);
+    color: white;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+  }
+  .btn-primary:hover {
+    background-color: var(--embranix-red);
+  }
+  .btn-secondary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    background-color: var(--embranix-red);
+    color: white;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+  }
+  .btn-secondary:hover {
+    background-color: var(--embranix-red-light);
+  }
+  .btn-outline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    background-color: transparent;
+    border: 1px solid var(--embranix-text);
+    color: var(--embranix-text);
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+  }
+  .btn-outline:hover {
+    background-color: var(--embranix-text);
+    color: white;
+  }
+  .text-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--embranix-text);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+  }
+  .text-link:hover {
+    color: var(--embranix-red);
+  }
+  .text-link svg {
+    transition: transform 0.2s ease;
+  }
+  .text-link:hover svg {
+    transform: translateX(4px);
+  }
+
+  .logo-img {
+    height: 135px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  @media (max-width: 768px) {
+    .logo-img {
+      height: 28px;
+    }
+  }
+
+  .venture-logo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  @media (max-width: 768px) {
+    .venture-logo {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section, .section, [class*="section"] {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 60px 24px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-scroll {
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .geometric-mark {
+    background: radial-gradient(circle, var(--embranix-red) 0%, transparent 70%);
+    filter: blur(60px);
+    opacity: 0.6;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
